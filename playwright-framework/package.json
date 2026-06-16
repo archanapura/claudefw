@@ -1,0 +1,29 @@
+{
+  "name": "playwright-automation-framework",
+  "version": "1.0.0",
+  "description": "Enterprise Playwright framework with POM, parallel execution, BrowserStack, and multi-browser support",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "test:e2e": "npx playwright test --grep @e2e",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:safari": "npx playwright test --project=webkit",
+    "test:parallel": "npx playwright test --workers=4",
+    "test:serial": "npx playwright test --workers=1",
+    "test:headed": "npx playwright test --headed",
+    "test:browserstack": "BROWSERSTACK=true npx playwright test",
+    "test:batch": "npx playwright test --shard=1/4",
+    "report": "npx playwright show-report",
+    "clean": "rm -rf test-results reports screenshots"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "dotenv": "^16.4.5",
+    "browserstack-playwright-cli": "^1.0.1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
